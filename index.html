@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#152139">
+  <meta name="description" content="สภาวุ่น ลุ้นองค์ประชุม เกมการ์ตูนตลกสำหรับทุกวัย">
+  <title>สภาวุ่น ลุ้นองค์ประชุม!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div><p class="eyebrow">เกมปาร์ตี้การ์ตูน • ไม่มีพรรคหรือบุคคลจริง</p><h1>🏛️ สภาวุ่น <span>ลุ้นองค์ประชุม!</span></h1></div>
+      <div class="top-actions"><button id="fullscreenBtn" class="sound-btn" type="button">⛶ เต็มจอ</button><button id="soundBtn" class="sound-btn" type="button" aria-pressed="true">🔊 เสียงเปิด</button></div>
+    </header>
+
+    <section class="status-row" aria-live="polite">
+      <div class="stat"><small>รอบ</small><strong id="round">1</strong></div>
+      <div class="stat"><small>คะแนนความป่วน</small><strong id="score">0</strong></div>
+      <div class="stat"><small>สมาชิกนั่งแล้ว</small><strong><span id="present">500</span>/<span id="memberTotal">500</span></strong></div>
+      <div class="stat quorum"><small>องค์ประชุมต้องมี</small><strong id="quorum">250</strong></div>
+      <div id="phaseBadge" class="phase-badge">พักเบรก • ปล่อยป่วนได้!</div>
+    </section>
+
+    <section class="stage-wrap">
+      <canvas id="stage" aria-label="สนามเกมสภาวุ่น มีตัวละครเดินไปมา"></canvas>
+      <div class="stage-hint" id="stageHint">คลิกจุดหมายเพื่อเดิน เข้าใกล้ ส.ส. แล้วดับเบิลคลิกเพื่อป๊อก!</div>
+      <div id="toast" class="toast" aria-live="assertive"></div>
+    </section>
+
+    <section class="control-panel">
+      <div class="instructions"><strong>ภารกิจหัวหน้าวิป</strong><span>ช่วงพักปล่อยให้ ส.ส. ไปเข้าห้องน้ำ กินกาแฟ หรือถ่ายเซลฟี่ เก็บคะแนนความป่วนไว้ พอเสียงเรียกประชุมดัง รีบพากลับให้นั่งถึงเกณฑ์!</span></div>
+      <div class="settings">
+        <label for="members">จำนวนสมาชิกในฉากจำลอง <strong id="memberValue">500</strong> คน</label>
+        <input id="members" type="range" min="60" max="500" step="10" value="500">
+        <button id="startBtn" type="button" class="start-btn">▶ เริ่มเกม</button>
+      </div>
+      <div class="key-help"><span>🖱️ คลิกจุดหมายให้เดินไป หรือกดค้างแล้วเลื่อนเมาส์</span><span>📱 iPhone: ลากนิ้วเดิน เข้าใกล้ ส.ส. แล้วแตะ 2 ครั้งเร็วๆ เพื่อป๊อก</span><span>🖱️ คอมพิวเตอร์: ดับเบิลคลิกใกล้ ส.ส. เพื่อป๊อก</span></div>
+    </section>
+    <footer>เกมจำลองเพื่อความบันเทิง • จำนวนสมาชิกปรับได้ • เกณฑ์ในเกมคำนวณครึ่งหนึ่งของสมาชิกที่ตั้งไว้</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
